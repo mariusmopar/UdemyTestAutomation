@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.11.0 on win32)" generated="20221130 13:36:56.115" rpa="false" schemaversion="3">
+<suite id="s1" name="Divotion website" source="C:\Users\mariu\PycharmProjects\setupProject\Divotion_website">
+<suite id="s1-s1" name="TC 001 Homepage" source="C:\Users\mariu\PycharmProjects\setupProject\Divotion_website\TC_001_Homepage.robot">
+<test id="s1-s1-t1" name="Test case 1 loading homepage" line="13">
+<kw name="Start browser and Maximize" library="resources1">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221130 13:36:56.240" level="INFO">Opening browser 'Chrome' to base url 'https://divotion.com/'.</msg>
+<status status="PASS" starttime="20221130 13:36:56.240" endtime="20221130 13:36:59.414"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221130 13:36:59.414" endtime="20221130 13:36:59.535"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:36:59.542" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:36:59.535" endtime="20221130 13:36:59.542"/>
+</kw>
+<status status="PASS" starttime="20221130 13:36:56.240" endtime="20221130 13:36:59.542"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>now retrieving xpath</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221130 13:36:59.543" endtime="20221130 13:36:59.543"/>
+</kw>
+<kw name="Real Element Locator">
+<var>${Header}</var>
+<arg>HomePage.Header</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>element locator called</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221130 13:36:59.544" endtime="20221130 13:36:59.544"/>
+</kw>
+<kw name="Read Locators From Json" library="Locators">
+<var>${Result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20221130 13:36:59.545" level="INFO">${Result} = ["xpath://section[@class='hero']"]</msg>
+<status status="PASS" starttime="20221130 13:36:59.544" endtime="20221130 13:36:59.545"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>results loaded from json file</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221130 13:36:59.545" endtime="20221130 13:36:59.545"/>
+</kw>
+<msg timestamp="20221130 13:36:59.545" level="INFO">${Header} = ["xpath://section[@class='hero']"]</msg>
+<status status="PASS" starttime="20221130 13:36:59.544" endtime="20221130 13:36:59.545"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Header}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221130 13:36:59.546" endtime="20221130 13:36:59.546"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>Real Element Locator</arg>
+<arg>HomePage.Header</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:00.200" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221130 13:37:00.200" level="FAIL">HomePage.Header</msg>
+<status status="FAIL" starttime="20221130 13:36:59.546" endtime="20221130 13:37:00.201"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://footer[@class="footer container"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:00.202" endtime="20221130 13:37:00.202"/>
+</kw>
+<kw name="Close Browser Window" library="resources1" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:02.203" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:00.202" endtime="20221130 13:37:02.203"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221130 13:37:02.203" endtime="20221130 13:37:04.280"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:00.202" endtime="20221130 13:37:04.280"/>
+</kw>
+<doc>First test for the Divotion website. Simply checks if homepage can be loaded and works.</doc>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20221130 13:36:56.240" endtime="20221130 13:37:04.281">HomePage.Header</status>
+</test>
+<test id="s1-s1-t2" name="Test case 2 Divoted" line="23">
+<kw name="Start browser and Maximize" library="resources1">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221130 13:37:04.283" level="INFO">Opening browser 'Chrome' to base url 'https://divotion.com/'.</msg>
+<status status="PASS" starttime="20221130 13:37:04.283" endtime="20221130 13:37:07.411"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221130 13:37:07.411" endtime="20221130 13:37:07.532"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:07.539" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:07.532" endtime="20221130 13:37:07.539"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:04.283" endtime="20221130 13:37:07.539"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@href="/divoted"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221130 13:37:07.539" level="INFO">Clicking element 'xpath://a[@href="/divoted"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:07.539" endtime="20221130 13:37:07.567"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:07.571" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:07.567" endtime="20221130 13:37:07.571"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath:(//article[@class="colleague"])[1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:07.944" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221130 13:37:07.944" level="FAIL">Page should have contained element 'xpath:(//article[@class="colleague"])[1]' but did not.</msg>
+<status status="FAIL" starttime="20221130 13:37:07.572" endtime="20221130 13:37:07.944"/>
+</kw>
+<kw name="Close Browser Window" library="resources1" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:09.945" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:07.945" endtime="20221130 13:37:09.945"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221130 13:37:09.945" endtime="20221130 13:37:12.026"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:07.945" endtime="20221130 13:37:12.026"/>
+</kw>
+<doc>test for page detailing Divotion employees</doc>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20221130 13:37:04.282" endtime="20221130 13:37:12.027">Page should have contained element 'xpath:(//article[@class="colleague"])[1]' but did not.</status>
+</test>
+<test id="s1-s1-t3" name="Test case 3 Opening case page" line="31">
+<kw name="Start browser and Maximize" library="resources1">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221130 13:37:12.029" level="INFO">Opening browser 'Chrome' to base url 'https://divotion.com/'.</msg>
+<status status="PASS" starttime="20221130 13:37:12.029" endtime="20221130 13:37:14.968"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221130 13:37:14.968" endtime="20221130 13:37:15.085"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:15.092" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:15.085" endtime="20221130 13:37:15.092"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:12.028" endtime="20221130 13:37:15.092"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@href="/cases"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221130 13:37:15.093" level="INFO">Clicking element 'xpath://a[@href="/cases"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:15.092" endtime="20221130 13:37:15.124"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:18.124" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:15.124" endtime="20221130 13:37:18.124"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:18.129" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:18.124" endtime="20221130 13:37:18.129"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://a[contains(text(), "Read the case about Case of BMW Financial Services / Alphabet")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:18.136" level="INFO">Current page contains element 'xpath://a[contains(text(), "Read the case about Case of BMW Financial Services / Alphabet")]'.</msg>
+<status status="PASS" starttime="20221130 13:37:18.130" endtime="20221130 13:37:18.136"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://a[contains(text(), "Read the case about Platform voor slimme verlichting")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:18.142" level="INFO">Current page contains element 'xpath://a[contains(text(), "Read the case about Platform voor slimme verlichting")]'.</msg>
+<status status="PASS" starttime="20221130 13:37:18.136" endtime="20221130 13:37:18.142"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://a[@class="blurred-image__link hidden-link prefetched"][position()=3]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:18.300" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221130 13:37:18.300" level="FAIL">Page should have contained element 'xpath://a[@class="blurred-image__link hidden-link prefetched"][position()=3]' but did not.</msg>
+<status status="FAIL" starttime="20221130 13:37:18.142" endtime="20221130 13:37:18.300"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://a[@class="blurred-image__link hidden-link prefetched"][position()=4]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:18.301" endtime="20221130 13:37:18.301"/>
+</kw>
+<kw name="Test footer" library="resources1">
+<status status="NOT RUN" starttime="20221130 13:37:18.301" endtime="20221130 13:37:18.301"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:18.301" endtime="20221130 13:37:18.301"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath://a[@class="blurred-image__link hidden-link" and position()=1]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:18.301" endtime="20221130 13:37:18.301"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:18.301" endtime="20221130 13:37:18.301"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>now clicking</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:18.301" endtime="20221130 13:37:18.301"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@class="blurred-image__link hidden-link" and position()=1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:18.301" endtime="20221130 13:37:18.301"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:18.301" endtime="20221130 13:37:18.301"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>BMW Financial Services</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20221130 13:37:18.302" endtime="20221130 13:37:18.302"/>
+</kw>
+<kw name="Close Browser Window" library="resources1" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:20.302" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:18.302" endtime="20221130 13:37:20.302"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221130 13:37:20.302" endtime="20221130 13:37:22.396"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:18.302" endtime="20221130 13:37:22.396"/>
+</kw>
+<doc>test for page detailing different cases/projects</doc>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20221130 13:37:12.028" endtime="20221130 13:37:22.397">Page should have contained element 'xpath://a[@class="blurred-image__link hidden-link prefetched"][position()=3]' but did not.</status>
+</test>
+<test id="s1-s1-t4" name="Test case 4 Event page" line="52">
+<kw name="Start browser and Maximize" library="resources1">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221130 13:37:22.399" level="INFO">Opening browser 'Chrome' to base url 'https://divotion.com/'.</msg>
+<status status="PASS" starttime="20221130 13:37:22.399" endtime="20221130 13:37:25.357"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221130 13:37:25.357" endtime="20221130 13:37:25.466"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:25.473" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:25.466" endtime="20221130 13:37:25.473"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:22.398" endtime="20221130 13:37:25.474"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@href="/events"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221130 13:37:25.474" level="INFO">Clicking element 'xpath://a[@href="/events"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:25.474" endtime="20221130 13:37:25.504"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://article[@class="event"][position()=1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:25.556" level="INFO">Current page contains element 'xpath://article[@class="event"][position()=1]'.</msg>
+<status status="PASS" starttime="20221130 13:37:25.505" endtime="20221130 13:37:25.557"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://article[@class="event"][position()=3]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:25.677" level="INFO">Current page contains element 'xpath://article[@class="event"][position()=3]'.</msg>
+<status status="PASS" starttime="20221130 13:37:25.557" endtime="20221130 13:37:25.677"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://article[@class="event"][position()=5]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:25.690" level="INFO">Current page contains element 'xpath://article[@class="event"][position()=5]'.</msg>
+<status status="PASS" starttime="20221130 13:37:25.678" endtime="20221130 13:37:25.690"/>
+</kw>
+<kw name="Test footer" library="resources1">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,document.body.scrollHeight);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221130 13:37:25.691" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight);
+Without any arguments.</msg>
+<status status="PASS" starttime="20221130 13:37:25.691" endtime="20221130 13:37:25.694"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:28.694" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:25.694" endtime="20221130 13:37:28.694"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://div[@class='footer-container']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221130 13:37:28.694" endtime="20221130 13:37:28.708"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://div[@class='footer__about']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:28.714" level="INFO">Current page contains element 'xpath://div[@class='footer__about']'.</msg>
+<status status="PASS" starttime="20221130 13:37:28.708" endtime="20221130 13:37:28.714"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://div[@class="footer__navigation"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:28.719" level="INFO">Current page contains element 'xpath://div[@class="footer__navigation"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:28.714" endtime="20221130 13:37:28.719"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://div[@class="footer__contact"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:28.724" level="INFO">Current page contains element 'xpath://div[@class="footer__contact"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:28.719" endtime="20221130 13:37:28.724"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:25.690" endtime="20221130 13:37:28.724"/>
+</kw>
+<kw name="Close Browser Window" library="resources1" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:30.726" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:28.725" endtime="20221130 13:37:30.726"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221130 13:37:30.726" endtime="20221130 13:37:32.811"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:28.725" endtime="20221130 13:37:32.811"/>
+</kw>
+<doc>test for page detailing on current and past Divotion events</doc>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20221130 13:37:22.398" endtime="20221130 13:37:32.811"/>
+</test>
+<test id="s1-s1-t5" name="Test case 5 trainingen pagina" line="62">
+<kw name="Start browser and Maximize" library="resources1">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221130 13:37:32.813" level="INFO">Opening browser 'Chrome' to base url 'https://divotion.com/'.</msg>
+<status status="PASS" starttime="20221130 13:37:32.812" endtime="20221130 13:37:35.927"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221130 13:37:35.927" endtime="20221130 13:37:36.038"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:36.045" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:36.038" endtime="20221130 13:37:36.045"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:32.812" endtime="20221130 13:37:36.045"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@href="/trainingen"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221130 13:37:36.046" level="INFO">Clicking element 'xpath://a[@href="/trainingen"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:36.045" endtime="20221130 13:37:36.074"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:41.075" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:36.074" endtime="20221130 13:37:41.075"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://b[contains(text(), "trainingen")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:41.082" level="INFO">Current page contains element 'xpath://b[contains(text(), "trainingen")]'.</msg>
+<status status="PASS" starttime="20221130 13:37:41.075" endtime="20221130 13:37:41.082"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://article[@class="training"][position()=1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:41.088" level="INFO">Current page contains element 'xpath://article[@class="training"][position()=1]'.</msg>
+<status status="PASS" starttime="20221130 13:37:41.082" endtime="20221130 13:37:41.088"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://article[@class="training"][position()=2]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:41.093" level="INFO">Current page contains element 'xpath://article[@class="training"][position()=2]'.</msg>
+<status status="PASS" starttime="20221130 13:37:41.088" endtime="20221130 13:37:41.093"/>
+</kw>
+<kw name="Close Browser Window" library="resources1" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:43.094" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:41.093" endtime="20221130 13:37:43.094"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221130 13:37:43.094" endtime="20221130 13:37:45.172"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:41.093" endtime="20221130 13:37:45.172"/>
+</kw>
+<doc>test for page detailing on current and past Divotion events</doc>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20221130 13:37:32.812" endtime="20221130 13:37:45.172"/>
+</test>
+<test id="s1-s1-t6" name="Test case 6 werken bij pagina" line="73">
+<kw name="Start browser and Maximize" library="resources1">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221130 13:37:45.173" level="INFO">Opening browser 'Chrome' to base url 'https://divotion.com/'.</msg>
+<status status="PASS" starttime="20221130 13:37:45.173" endtime="20221130 13:37:48.111"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221130 13:37:48.112" endtime="20221130 13:37:48.221"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:48.228" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:48.221" endtime="20221130 13:37:48.228"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:45.173" endtime="20221130 13:37:48.228"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@href="/werken-bij"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221130 13:37:48.229" level="INFO">Clicking element 'xpath://a[@href="/werken-bij"]'.</msg>
+<status status="PASS" starttime="20221130 13:37:48.228" endtime="20221130 13:37:48.262"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://span[contains(text(), "ruimte om jezelf")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:37:48.686" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221130 13:37:48.686" level="FAIL">Page should have contained element 'xpath://span[contains(text(), "ruimte om jezelf")]' but did not.</msg>
+<status status="FAIL" starttime="20221130 13:37:48.262" endtime="20221130 13:37:48.687"/>
+</kw>
+<kw name="Close Browser Window" library="resources1" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:37:50.688" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 13:37:48.687" endtime="20221130 13:37:50.688"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221130 13:37:50.688" endtime="20221130 13:37:52.760"/>
+</kw>
+<status status="PASS" starttime="20221130 13:37:48.687" endtime="20221130 13:37:52.760"/>
+</kw>
+<doc>test for page with vacancies</doc>
+<tag>regression</tag>
+<tag>smoke</tag>
+<status status="FAIL" starttime="20221130 13:37:45.173" endtime="20221130 13:37:52.760">Page should have contained element 'xpath://span[contains(text(), "ruimte om jezelf")]' but did not.</status>
+</test>
+<status status="FAIL" starttime="20221130 13:36:56.128" endtime="20221130 13:37:52.761"/>
+</suite>
+<status status="FAIL" starttime="20221130 13:36:56.116" endtime="20221130 13:37:52.763"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="4" skip="0">Regression</stat>
+<stat pass="2" fail="4" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="2" fail="4" skip="0" id="s1" name="Divotion website">Divotion website</stat>
+<stat pass="2" fail="4" skip="0" id="s1-s1" name="TC 001 Homepage">Divotion website.TC 001 Homepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

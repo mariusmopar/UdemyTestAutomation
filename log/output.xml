@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.0 on win32)" generated="20221130 13:41:14.691" rpa="false" schemaversion="3">
+<suite id="s1" name="TC 001 Homepage" source="C:\Users\mariu\PycharmProjects\setupProject\Divotion_website\TC_001_Homepage.robot">
+<test id="s1-t1" name="Test case 1 loading homepage" line="13">
+<kw name="Real Element Locator">
+<var>${Header}</var>
+<arg>HomePage.Header</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>element locator called</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221130 13:41:14.833" endtime="20221130 13:41:14.833"/>
+</kw>
+<kw name="Read Locators From Json" library="Locators">
+<var>${Result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20221130 13:41:14.834" level="INFO">${Result} = ["xpath://section[@class='hero']"]</msg>
+<status status="PASS" starttime="20221130 13:41:14.833" endtime="20221130 13:41:14.835"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>results loaded from json file</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221130 13:41:14.835" endtime="20221130 13:41:14.835"/>
+</kw>
+<msg timestamp="20221130 13:41:14.835" level="INFO">${Header} = ["xpath://section[@class='hero']"]</msg>
+<status status="PASS" starttime="20221130 13:41:14.833" endtime="20221130 13:41:14.835"/>
+</kw>
+<kw name="Real Element Locator">
+<var>${Footer}</var>
+<arg>HomePage.Footer</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>element locator called</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221130 13:41:14.836" endtime="20221130 13:41:14.836"/>
+</kw>
+<kw name="Read Locators From Json" library="Locators">
+<var>${Result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20221130 13:41:14.836" level="INFO">${Result} = ["xpath://footer[@class='footer container']"]</msg>
+<status status="PASS" starttime="20221130 13:41:14.836" endtime="20221130 13:41:14.836"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>results loaded from json file</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221130 13:41:14.836" endtime="20221130 13:41:14.836"/>
+</kw>
+<msg timestamp="20221130 13:41:14.836" level="INFO">${Footer} = ["xpath://footer[@class='footer container']"]</msg>
+<status status="PASS" starttime="20221130 13:41:14.835" endtime="20221130 13:41:14.836"/>
+</kw>
+<kw name="Start browser and Maximize" library="resources1">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221130 13:41:14.837" level="INFO">Opening browser 'Chrome' to base url 'https://divotion.com/'.</msg>
+<status status="PASS" starttime="20221130 13:41:14.837" endtime="20221130 13:41:18.000"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221130 13:41:18.000" endtime="20221130 13:41:18.108"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://header[@class="header header--notfixed"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:41:18.115" level="INFO">Current page contains element 'xpath://header[@class="header header--notfixed"]'.</msg>
+<status status="PASS" starttime="20221130 13:41:18.108" endtime="20221130 13:41:18.115"/>
+</kw>
+<status status="PASS" starttime="20221130 13:41:14.837" endtime="20221130 13:41:18.115"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${Header}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:41:18.121" level="INFO">Current page contains element '["xpath://section[@class='hero']"]'.</msg>
+<status status="PASS" starttime="20221130 13:41:18.115" endtime="20221130 13:41:18.121"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${Footer}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221130 13:41:18.128" level="INFO">Current page contains element '["xpath://footer[@class='footer container']"]'.</msg>
+<status status="PASS" starttime="20221130 13:41:18.121" endtime="20221130 13:41:18.128"/>
+</kw>
+<kw name="Close Browser Window" library="resources1" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221130 13:41:20.137" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 13:41:18.128" endtime="20221130 13:41:20.137"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221130 13:41:20.137" endtime="20221130 13:41:26.323"/>
+</kw>
+<status status="PASS" starttime="20221130 13:41:18.128" endtime="20221130 13:41:26.323"/>
+</kw>
+<doc>First test for the Divotion website. Simply checks if homepage can be loaded and works.</doc>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20221130 13:41:14.833" endtime="20221130 13:41:26.323"/>
+</test>
+<status status="PASS" starttime="20221130 13:41:14.692" endtime="20221130 13:41:26.324"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 001 Homepage">TC 001 Homepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

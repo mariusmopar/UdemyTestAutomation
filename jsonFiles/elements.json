@@ -1,0 +1,16 @@
+{
+  "HomePage":
+      {
+        "Header": "xpath://section[@class='hero']",
+        "Footer": "xpath://footer[@class='footer container']",
+        "randomKey3": "randomValue3"
+      },
+  "Login":
+      {
+        "randomalso1": "val1",
+        "random2": "val2",
+        "random3": "val3"
+      }
+
+
+}
